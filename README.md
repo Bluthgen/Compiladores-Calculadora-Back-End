@@ -43,3 +43,39 @@ Exemplo 3
 Exemplo 4: (programa inválido)
 
     5
+Exemplo 5 (programa inválido)
+    
+    7 + 9
+
+** Considerações
+1) Sua gramática deve considerar precedência de operadores.
+
+2) Seu frontend deve emitir erros de forma precisa, indicando linha e coluna além da descrição do erro.
+
+3) Seu analisador sintático deve APENAS gerar uma árvore sintática abstrata, nenhum outro tipo de processamento deve ser realizado pelo analisador sintático.
+    
+4) O analisador semântico deve validar as seguintes regras:
+
+    a) A primeira definição de uma variável determina o seu tipo.
+
+    b) O tipo da variável não muda durante a execução do programa.
+
+    c) As operações (inclusive atribuição) devem ser realizadas em objetos do mesmo tipo.
+
+    d) O tipo do resultado da operação de divisão é o tipo de seus operandos.
+
+5) Você pode unir os passos 3 e 4 em um único código. Os outros passos precisam ser independentes.
+
+6) Utilize getopt para parametrizar seu compilador, da seguinte forma:
+
+    -a <YYY> imprime a árvore sintática abstrata (opcional)
+
+    -o <XXX> nome do arquivo de saída
+
+    -h ajuda
+
+Então uma chamada ao compilador deve ser:
+
+    calc -a teste.tree -o teste teste.calc
+
+7) O arquivo de entrada deve ter extensão .calc.
